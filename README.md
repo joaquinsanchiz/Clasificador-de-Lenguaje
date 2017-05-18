@@ -2,3 +2,4 @@
 > Por Joaquin Sanchiz
 ---
 Documentación en la gh-pages del repositorio.
+Credits: Twitter4j.
