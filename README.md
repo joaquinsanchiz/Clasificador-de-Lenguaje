@@ -1,4 +1,4 @@
-# Clasificador de Lenguajes en Java®
+# Clasificador de Lenguajes
 > Por Joaquin Sanchiz
 ---
 Documentación: https://joaquinsanchiz.github.io/Clasificador-de-Lenguaje/    
