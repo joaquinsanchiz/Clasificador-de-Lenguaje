@@ -24,15 +24,11 @@ public class MyBot {
 	 */
 	int SEARCH_BREAKTIMEDURATION = 1;
 	/**
-	 * Break cada tantos segundos.
-	 */
-	int LIKE_BREAKTIME = 300;
-	/**
-	 * Tiempo de espera si ya has dado a like.
+	 * Tiempo de espera si ya has incluido el estado.
 	 */
 	int ALREADYSEARCHEDTIME = 5;
 	/**
-	 * Parada entre cada like.
+	 * Parada entre cada estado.
 	 */
 	int SEARCH_EVERY_SECS = 1;
 	
