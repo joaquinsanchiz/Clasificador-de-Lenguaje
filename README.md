@@ -33,4 +33,20 @@ Aclarado todo esto, la consulta que se realizará será: twitter. Esta consulta 
 En el filtro, se filtrarán tweets con contenido sensible, tweets que contengan la palabra “bot” en su nombre de usuario, tweets de menos de 3 palabras, y tweets en árabe, tailandés, chino y algún otro lenguaje extraño. El motivo de filtrar estos tweets es porque contienen caracteres incompatibles en el formato csv, y pueden dar lugar a errores a la hora de importar el fichero en MonkeyLearn. Queremos estar seguros de que las entradas del corpus van a ser correctas antes de poner en funcionamiento el programa, ya que depurar caracteres extraños en un corpus grande puede resultar algo tedioso. Para no estar pendiente del programa, se le ha añadido la funcionalidad de que en caso de que ocurra una excepción, me envíe un mensaje por twitter con el mensaje de la excepción, y también avisará el programa cuando llegue a las 1000 entradas, para la realización de un testeo.
 Unas horas más tarde tenemos un corpus bastante sólido con el que ya podemos empezar a trabajar.
 
+## Trabajo con MonkeyLearn®.
+Una vez introducidas las 1000 entradas del corpus al MonkeyLearn comprobamos que todo va sobre ruedas, muy pocos errores y una precisión del 100%. A medida que seguimos aumentando el número de muestras vemos que la precisión va bajando ligeramente. Con 2000 muestras y el modelo unigrama & bigrama, obtenemos una precisión del 96%, pero al cambiar de modelo y utilizar tan solo unigrama obtenemos unos resultados del 99%, bastante mejores. Es normal que hayan bajado un poco los resultados, ya que con más entradas, más lenguajes en las categorías, y más difícil de clasificar. Vemos que los principales fallos en la matriz de confusión están entre el francés y el español y entre el portugués y el español. Tiene sentido ya que son idiomas que comparten muchas palabras y en el modelo unigrama esto puede dar lugar a error en la clasificación. Quitando eso los resultados son bastante buenos para la cantidad de muestras en la máquina. 
+
+## Conclusiones
+En definitiva, ha sido un proyecto muy interesante y entretenido. Se ha investigado mucho y se han aprendido cosas muy prácticas. Lo más práctico y original que me ha parecido ha sido la generación del corpus, ya que el tratamiento inteligente y minería de datos mediante aplicaciones de este tipo puede servir para proyectos como este de inteligencia artificial y para proyectos de otras ramas de la informática o de la estadística.  
+
+## API de MonkeyLearn®.
+```
+curl --data '{"text_list": ["some text to test", "some more text"]}' \
+-H "Authorization:Token 36ec8da8c5dade00c17a5f7f411d8e354f668184" \
+-H "Content-Type: application/json" \
+-D - \
+"https://api.monkeylearn.com/v2/classifiers/cl_ScWTnp5z/classify/?sandbox=1"
+```
+
+
 
